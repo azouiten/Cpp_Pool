@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 15:56:06 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/17 17:05:41 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/09/17 18:14:46 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,9 @@ Zombie::~Zombie(void)
 void    Zombie::announce(void)
 {
     std::cout << this->name << " BraiiiiiiinnnzzzZ..." << std::endl;
+}
+
+void    Zombie::setName(std::string name)
+{
+    this->name = name;
 }

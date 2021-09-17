@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/17 15:56:11 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/17 16:09:40 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/09/17 17:00:15 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define _ZOMBIE_H_
 
 #include <iostream>
+
 
 class Zombie
 {
@@ -25,5 +26,8 @@ public:
     ~Zombie();
     void    announce(void);
 };
+
+void    randomChump(std::string name);
+Zombie* newZombie( std::string name);
 
 #endif
