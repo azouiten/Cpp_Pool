@@ -1,30 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/18 11:51:36 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/18 15:25:31 by azouiten         ###   ########.fr       */
+/*   Created: 2021/09/18 17:04:47 by azouiten          #+#    #+#             */
+/*   Updated: 2021/09/18 17:20:56 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HUMANA_H
-#define HUMANA_H
-#include "Weapon.hpp"
 #include <iostream>
+#include <fstream>
 
-class   HumanA
+int main(int argc, char** argv)
 {
-private:
-    std::string _name;
-    Weapon&      _wpn;
+    if (argc != 4)
+    {
+        std::cout << "Wrong number of parameters."<< std::endl;
+        return (0);
+    }
+    try
+    {
+        std::ifstream	ifs("numbers");
+    }
+    catch 
+    {
+        std::cout << "Could not open the file."<< std::endl;
+    }
 
-public:
-    HumanA(std::string name, Weapon& wpn);
-    ~HumanA(void);
-    void    attack(void);
-};
-
-#endif
+    return (0);
+}

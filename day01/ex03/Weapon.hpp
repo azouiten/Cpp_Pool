@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:38:46 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/18 11:48:39 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/09/18 15:20:18 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,9 @@ private:
     std::string type;
 public:
     Weapon();
+    Weapon(std::string name);
     ~Weapon();
-    std::string& const  getType(void);
+    const std::string& getType(void);
     void    setType(std::string type);
 };
 

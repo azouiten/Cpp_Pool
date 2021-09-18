@@ -6,21 +6,15 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 11:51:22 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/18 12:59:47 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/09/18 15:25:21 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanA.hpp"
 
-HumanA::HumanA(void)
+HumanA::HumanA(std::string name, Weapon& wpn) : _name(name), _wpn(wpn)
 {
-    std::cout << "a human A spawns!" << std::endl;
-}
-
-HumanA::HumanA(Weapon wpn)
-{
-    _wpn = wpn;
-    std::cout << "a human A spawns!" << std::endl;
+    std::cout << "a humanA spawned!" << std::endl;
 }
 
 HumanA::~HumanA(void)
