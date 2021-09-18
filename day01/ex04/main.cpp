@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/18 17:04:47 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/18 17:20:56 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/09/18 17:56:34 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char** argv)
     catch 
     {
         std::cout << "Could not open the file."<< std::endl;
-    }
+    };
 
     return (0);
 }
