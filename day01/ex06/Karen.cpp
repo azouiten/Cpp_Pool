@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:57:43 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/22 09:57:24 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/09/21 12:10:09 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,10 @@ void        (Karen::*(Karen::funcs)[])(void) = {&Karen::debug, &Karen::info, &Ka
 
 Karen::Karen(void)
 {
-    std::cout << "A Karen has entered the store!" << std::endl;
 }
 
 Karen::~Karen(void)
 {
-    std::cout << "A Karen has stormed out!" << std::endl;
 }
 
 void    Karen::debug(void)
@@ -51,9 +49,7 @@ void    Karen::complain(std::string level)
 
     i = 0;
     while (levels[i] != level)
-    {
         i += 1;
-    }
     (this->*funcs[i])();
 
 }

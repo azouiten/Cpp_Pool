@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/09 12:17:53 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/17 12:05:05 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/09/22 09:47:33 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,8 @@ void    timestamp(void)
     std::cout << std::setfill('0') << std::setw(2) << 1 + ltm->tm_mon;
     std::cout << std::setfill('0') << std::setw(2) << ltm->tm_mday;
     std::cout << "_";
-    std::cout << std::setfill('0') << std::setw(2) << 5+ltm->tm_hour;
-    std::cout << std::setfill('0') << std::setw(2) << 30+ltm->tm_min;
+    std::cout << std::setfill('0') << std::setw(2) << ltm->tm_hour;
+    std::cout << std::setfill('0') << std::setw(2) << ltm->tm_min;
     std::cout << std::setfill('0') << std::setw(2) << ltm->tm_sec;
     std::cout << "] ";
 }
