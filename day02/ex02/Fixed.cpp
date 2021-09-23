@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:26:13 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/23 17:59:52 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/09/23 16:20:07 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,6 @@ Fixed::Fixed(int const intValue)
 
 Fixed::Fixed(float const floatValue)
 {
-    float blob1 = floatValue;
-    std::bitset<32> b3(*(reinterpret_cast<int*>(&blob1)));
-    float blob = floatValue * (1 << 1);
-    std::bitset<32> b2(*(reinterpret_cast<int*>(&blob)));
-    std::cout << b3 << "before \n";
-    std::cout << b2 << "after \n";
     this->value = roundf(floatValue * (1 << this->fractionalBits));
     std::cout << "Default constructer called.\n";
 }
@@ -72,6 +66,78 @@ std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
 {
     o << rhs.toFloat();
     return (o);
+}
+
+bool    Fixed::operator==(Fixed const & rhs)
+{
+    if (this->value == rhs.getRawBits())
+        return (true);
+    return (false);
+}
+
+bool    Fixed::operator!=(Fixed const & rhs)
+{
+    if (this->value == rhs.getRawBits())
+        return (false);
+    return (true);
+}
+
+bool    Fixed::operator<(Fixed const & rhs)
+{
+    if (this->value < rhs.getRawBits())
+        return (true);
+    return (false);
+}
+
+bool    Fixed::operator<=(Fixed const & rhs)
+{
+    if (this->value <= rhs.getRawBits())
+        return (true);
+    return (false);
+}
+
+bool    Fixed::operator>(Fixed const & rhs)
+{
+    if (this->value > rhs.getRawBits())
+        return (true);
+    return (false);
+}
+
+bool    Fixed::operator>=(Fixed const & rhs)
+{
+    if (this->value >= rhs.getRawBits())
+        return (true);
+    return (false);
+}
+
+Fixed & Fixed::operator*(Fixed const & rhs)
+{
+    this->value = (this->value * rhs.value) >> fractionalBits;
+    return (*this);
+}
+
+Fixed & Fixed::operator/(Fixed const & rhs)
+{
+    if (rhs.value != 0)
+    {
+        this->value = this->value << fractionalBits;
+        this->value = (this->value / rhs.value);
+    }
+    else
+        std::cout << "Can't devide by zero!\n";
+    return (*this);
+}
+
+Fixed & Fixed::operator+(Fixed const & rhs)
+{
+    this->value += rhs.getRawBits();
+    return (*this);
+}
+
+Fixed & Fixed::operator-(Fixed const & rhs)
+{
+    this->value -= rhs.getRawBits();
+    return (*this);
 }
 
 int Fixed::getRawBits(void) const

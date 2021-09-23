@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:26:15 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/23 10:15:22 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/09/23 15:10:21 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,16 @@ public:
     ~Fixed(void);
 
     Fixed & operator=(Fixed const & rhs);
+    bool    operator>(Fixed const & rhs);
+    bool    operator>=(Fixed const & rhs);
+    bool    operator<(Fixed const & rhs);
+    bool    operator<=(Fixed const & rhs);
+    bool    operator==(Fixed const & rhs);
+    bool    operator!=(Fixed const & rhs);
+    Fixed & operator*(Fixed const & rhs);
+    Fixed & operator/(Fixed const & rhs);
+    Fixed & operator+(Fixed const & rhs);
+    Fixed & operator-(Fixed const & rhs);
     int     getRawBits(void) const;
     void    setRawBits(int const raw);
     float   toFloat(void) const;
