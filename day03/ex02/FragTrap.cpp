@@ -1,40 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 15:11:20 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:51:40 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/04 11:53:00 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/04 12:03:11 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+FragTrap::FragTrap(void)
 {
-    std::cout << "A ScavTrap has spawned!\n";
+    std::cout << "A FragTrap has spawned!\n";
     _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
+    _energyPoints = 100;
+    _attackDamage = 30;
 }
 
-ScavTrap::ScavTrap(std::string name)
+FragTrap::FragTrap(std::string name)
 {
-    std::cout << "A ScavTrap has spawned!\n";
+    std::cout << "A FragTrap has spawned!\n";
     _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
+    _energyPoints = 100;
+    _attackDamage = 30;
     _name = name;
 }
 
-ScavTrap::~ScavTrap(void)
+FragTrap::~FragTrap(void)
 {
-    std::cout << "A ScavTrap has died.\n";
+    std::cout << "A FragTrap has died!\n";
 }
 
-ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
+FragTrap & FragTrap::operator=(FragTrap const & rhs)
 {
     if (this != &rhs)
     {
@@ -46,7 +46,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
     return (*this);
 }
 
-void    ScavTrap::guardGate(void)
+void    FragTrap::highFivesGuys(void)
 {
-    std::cout << "ScavTrap " << _name << " is now a gate keeper!\n";
+    std::cout << "This is a positive high fives request.\n";
 }

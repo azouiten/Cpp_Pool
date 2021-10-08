@@ -5,16 +5,17 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/05 11:10:38 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/05 11:36:59 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "DiamondTrap.hpp"
 
-int     main(void)
+int main(void)
 {
-    ClapTrap cp("blob");
-    
+    DiamondTrap D("blob");
+
+    D.whoAmI();
     return (0);
 }

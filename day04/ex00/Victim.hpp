@@ -1,20 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Victim.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/05 13:27:52 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/05 17:09:05 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef VICTIM_HPP
+#define VICTIM_HPP
 
-int     main(void)
+#include <iostream>
+
+class   Victim
 {
-    ClapTrap cp("blob");
-    
-    return (0);
-}
+protected:
+    std::string _name;
+    Victim(void);
+
+public:
+    Victim(std::string name);
+    ~Victim(void);
+
+    Victim & operator=(Victim const & rhs);
+    std::string getName(void) const;
+    virtual void getPolymorphed(void) const;
+};
+
+std::ostream & operator<<(std::ostream & o, Victim const & rhs);
+
+#endif

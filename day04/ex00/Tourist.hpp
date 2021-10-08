@@ -1,20 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Tourist.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/06 13:17:48 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/06 13:19:59 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef TOURIST_HPP
+#define TOURIST_HPP
 
-int     main(void)
+#include "Victim.hpp"
+
+class Tourist : public Victim
 {
-    ClapTrap cp("blob");
-    
-    return (0);
-}
+private:
+    Tourist(void);
+
+public:
+    Tourist(std::string name);
+    ~Tourist(void);
+
+    Tourist & operator=(Tourist const & rhs);
+    virtual void getPolymorphed(void) const;
+};
+
+std::ostream & operator<<(std::ostream & o, Tourist const & rhs);
+
+#endif

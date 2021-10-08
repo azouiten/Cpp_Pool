@@ -5,16 +5,25 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/05 16:20:50 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/06 13:24:38 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "Victim.hpp"
+#include "Sorcerer.hpp"
+#include "Peon.hpp"
+#include "Tourist.hpp"
 
-int     main(void)
+int main(void)
 {
-    ClapTrap cp("blob");
-    
-    return (0);
+    Sorcerer robert("Robert", "the Magnificent");
+    Victim jim("Jimmy");
+    Peon joe("Joe");
+    Tourist amy("Amy");
+    std::cout << robert << jim << joe << amy;
+    robert.polymorph(jim);
+    robert.polymorph(joe);
+    robert.polymorph(amy);
+    return 0;
 }

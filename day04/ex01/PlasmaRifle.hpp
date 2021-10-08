@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PlasmaRifle.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/07 10:52:14 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/07 11:01:27 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef PLASMARIFLE_HPP
+#define PLASMARIFLE_HPP
 
-int     main(void)
+#include "AWeapon.hpp"
+
+class   PlasmaRifle : public AWeapon
 {
-    ClapTrap cp("blob");
-    
-    return (0);
-}
+public:
+    PlasmaRifle(void);
+    ~PlasmaRifle(void);
+    virtual void attack(void) const;
+};
+
+#endif

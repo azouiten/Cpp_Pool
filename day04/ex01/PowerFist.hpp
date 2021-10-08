@@ -1,20 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PowerFist.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/07 11:01:51 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/07 11:22:15 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef POWERFIST_HPP
+#define POWERFIST_HPP
 
-int     main(void)
+#include "AWeapon.hpp"
+
+class   PowerFist : public AWeapon
 {
-    ClapTrap cp("blob");
-    
-    return (0);
-}
+public:
+    PowerFist(void);
+    ~PowerFist(void);
+    virtual void attack(void) const;
+};
+
+#endif

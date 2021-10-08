@@ -1,20 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PowerFist.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/07 11:02:27 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/07 11:22:11 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "PowerFist.hpp"
 
-int     main(void)
+PowerFist::PowerFist(void) : AWeapon("Power Fist", 8, 50)
 {
-    ClapTrap cp("blob");
-    
-    return (0);
+    std::cout << "a Power Fist has been created.\n";
+}
+
+PowerFist::~PowerFist(void)
+{
+    std::cout << "a Power Fist has been destroyed.\n";
 }

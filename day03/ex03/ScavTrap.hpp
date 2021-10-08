@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/09/29 15:11:22 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/05 11:31:49 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef SCAVTRAP_HPP
+#define SCAVTRAP_HPP
 
-int     main(void)
+#include "ClapTrap.hpp"
+#include <iostream>
+
+class   ScavTrap : virtual public ClapTrap
 {
-    ClapTrap cp("blob");
-    
-    return (0);
-}
+    public:
+    ScavTrap(void);
+    ScavTrap(std::string name);
+    ScavTrap(int param);
+    ~ScavTrap(void);
+
+    ScavTrap & operator=(ScavTrap const & rhs);
+    void guardGate(void);
+};
+
+#endif

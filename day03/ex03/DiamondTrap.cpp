@@ -1,40 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScavTrap.cpp                                       :+:      :+:    :+:   */
+/*   DiamondTrap.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/09/29 15:11:20 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:51:40 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/04 12:06:05 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/05 12:59:52 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
-ScavTrap::ScavTrap(void)
+DiamondTrap::DiamondTrap(void)
 {
-    std::cout << "A ScavTrap has spawned!\n";
-    _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
+    std::cout << "a DiamondTrap has spawned.\n";
 }
 
-ScavTrap::ScavTrap(std::string name)
+DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name") , ScavTrap(4), FragTrap(3)
 {
-    std::cout << "A ScavTrap has spawned!\n";
-    _hitPoints = 100;
-    _energyPoints = 50;
-    _attackDamage = 20;
-    _name = name;
+    pName = name;
+    std::cout << "a DiamondTrap has spawned.\n";
 }
 
-ScavTrap::~ScavTrap(void)
-{
-    std::cout << "A ScavTrap has died.\n";
-}
-
-ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
+DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs)
 {
     if (this != &rhs)
     {
@@ -46,7 +35,7 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
     return (*this);
 }
 
-void    ScavTrap::guardGate(void)
+void    DiamondTrap::whoAmI(void)
 {
-    std::cout << "ScavTrap " << _name << " is now a gate keeper!\n";
+    std::cout << " I am DiamondTrap " << pName << " and my ClapTrap name is " << _name << std::endl;
 }

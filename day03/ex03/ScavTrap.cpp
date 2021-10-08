@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 15:11:20 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:51:40 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/05 11:33:57 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,23 @@ ScavTrap::ScavTrap(std::string name)
     _energyPoints = 50;
     _attackDamage = 20;
     _name = name;
+}
+
+ScavTrap::ScavTrap(int param)
+{
+    std::cout << "A ScavTrap has spawned!\n";
+    if (param % 2 != 0)
+    {
+        param -= 1;
+        _hitPoints = 100;
+    }
+    if (param >= 4)
+    {
+        param -= 4;
+        _energyPoints = 50;
+    }
+    else if (param == 2)
+        _attackDamage = 20;
 }
 
 ScavTrap::~ScavTrap(void)

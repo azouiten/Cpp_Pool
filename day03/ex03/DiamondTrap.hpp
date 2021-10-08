@@ -1,20 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   DiamondTrap.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/04 12:06:03 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/05 12:59:06 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef DIAMONDTRAP_HPP
+#define DIAMONDTRAP_HPP
 
-int     main(void)
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
+
+class   DiamondTrap : public FragTrap, public ScavTrap
 {
-    ClapTrap cp("blob");
-    
-    return (0);
-}
+private:
+    std::string pName;
+
+public:
+    DiamondTrap(void);
+    DiamondTrap(std::string name);
+    DiamondTrap & operator=(DiamondTrap const & rhs);
+    void    whoAmI(void);
+};
+
+#endif

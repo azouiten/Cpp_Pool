@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/04 11:52:59 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/04 11:57:38 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FRAGTRAP_HPP
+#define FRAGTRAP_HPP
 #include "ClapTrap.hpp"
 
-int     main(void)
+class   FragTrap : public   ClapTrap
 {
-    ClapTrap cp("blob");
-    
-    return (0);
-}
+public:
+    FragTrap(void);
+    FragTrap(std::string name);
+    ~FragTrap(void);
+
+    FragTrap & operator=(FragTrap const & rhs);
+    void highFivesGuys(void);
+};
+
+#endif

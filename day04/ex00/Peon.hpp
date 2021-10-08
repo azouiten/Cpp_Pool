@@ -1,20 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Peon.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/05 16:08:08 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/05 17:09:15 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#ifndef PEON_HPP
+#define PEON_HPP
+#include "Victim.hpp"
 
-int     main(void)
+class   Peon : public   Victim
 {
-    ClapTrap cp("blob");
-    
-    return (0);
-}
+private:
+    Peon(void);
+
+public:
+    Peon(std::string name);
+    ~Peon(void);
+
+    Peon & operator=(Peon const & rhs);
+    virtual void getPolymorphed(void) const;
+};
+
+std::ostream & operator<<(std::ostream & o, Peon const & rhs);
+
+#endif

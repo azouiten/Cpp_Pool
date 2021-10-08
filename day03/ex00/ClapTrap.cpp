@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 14:41:45 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/29 15:08:40 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/04 11:44:53 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ ClapTrap::ClapTrap(void) : _hitPoints(10), _energyPoints(10), _attackDamage(0)
 ClapTrap::ClapTrap(std::string name) : _hitPoints(10), _energyPoints(10), _attackDamage(0)
 {
     _name = name;
-    std::cout << "A ClapTrap has died.\n";
+    std::cout << "A ClapTrap has spawned.\n";
 }
 
 ClapTrap::~ClapTrap(void)
@@ -32,6 +32,38 @@ void    ClapTrap::attack(std::string const & target)
 {
     _energyPoints -= 1;
     std::cout << "ClapTrap " << _name << " has attacked " << target << " for " << _attackDamage << " Damage points!\n";
+}
+
+std::string ClapTrap::getName(void) const
+{
+    return (_name);
+}
+
+int     ClapTrap::getHitPoints(void) const
+{
+    return (_hitPoints);
+}
+
+int     ClapTrap::getEnergyPoints(void) const
+{
+    return (_energyPoints);
+}
+
+int     ClapTrap::getAttackDamage(void) const
+{
+    return (_attackDamage);
+}
+
+ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
+{
+    if (this != &rhs)
+    {
+        this->_name = rhs.getName();
+        this->_hitPoints = rhs.getHitPoints();
+        this->_energyPoints = rhs.getEnergyPoints();
+        this->_attackDamage = rhs.getAttackDamage();
+    }
+    return (*this);
 }
 
 void    ClapTrap::takeDamage(unsigned int amount)

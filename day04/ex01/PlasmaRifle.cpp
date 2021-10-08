@@ -1,20 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   PlasmaRifle.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/04 11:41:18 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:42:00 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/07 10:52:10 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/07 11:00:28 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
+#include "PlasmaRifle.hpp"
 
-int     main(void)
+PlasmaRifle::PlasmaRifle(void) : AWeapon("Plasma Rifle", 5, 21)
 {
-    ClapTrap cp("blob");
-    
-    return (0);
+    std::cout << "a Plasma Rifle has been created.\n";
+}
+
+PlasmaRifle::~PlasmaRifle(void)
+{
+    std::cout << "a Plasma Rifle has been destroyed.\n";
+}
+
+void    PlasmaRifle::attack(void) const
+{
+    std::cout << "* piouuu piouuu piouuu *\n";
 }
