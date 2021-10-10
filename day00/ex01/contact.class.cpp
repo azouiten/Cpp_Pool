@@ -6,19 +6,15 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 18:43:45 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/08 16:15:04 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/09 09:04:46 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "contact.class.hpp"
 
-contact::contact(void)
-{
-}
+contact::contact(void){}
 
-contact::~contact(void)
-{
-}
+contact::~contact(void){}
 
 std::string contact::getFirstName(void)
 {

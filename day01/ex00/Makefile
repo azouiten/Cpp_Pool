@@ -6,11 +6,11 @@
 #    By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/08 10:11:20 by azouiten          #+#    #+#              #
-#    Updated: 2021/10/08 16:16:50 by azouiten         ###   ########.fr        #
+#    Updated: 2021/10/09 09:03:33 by azouiten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME="PhoneBook"
+NAME=PhoneBook
 SRCS= contact.class.cpp main.cpp phoneBook.class.cpp
 OBJS= $(SRCS:.cpp=.o)
 CXX= clang++

@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/26 19:22:17 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/08 16:34:04 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/09 09:25:23 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,14 +83,13 @@ void    phoneBook::search(void)
     }
     catch (...)
     {
-        std::cout << "Invalid index!\n";
         ind = 100;
     }
-        
-    if (ind > actualSize || ind >= 0)
+    if (ind >= actualSize || ind < 0 || std::cin.eof())
         std::cout << "Invalid input!\n";
     else
     {
+        std::cout << actualSize << std::endl;
         std::cout << "First name        :   " << contact_table[ind].getFirstName() << std::endl;
         std::cout << "Last name         :   " << contact_table[ind].getLastName() << std::endl;
         std::cout << "Phone number      :   " << contact_table[ind].getPhoneNumber() << std::endl;

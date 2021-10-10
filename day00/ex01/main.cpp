@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/07/28 15:40:50 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/08 15:09:46 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/09 09:22:51 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int main(void)
 
     while (!quit)
     {
+        if (std::cin.eof())
+            break;
         std::cout << "1 - ADD" << std::endl;
         std::cout << "2 - SEARCH" << std::endl;
         std::cout << "3 - EXIT" << std::endl;
@@ -31,8 +33,11 @@ int main(void)
             phoneBookInstance.search();
         else if (response == "EXIT")
             quit = 1;
-        else if (std::cin.eof() || !std::cin.good())
+        else if (std::cin.eof())
+        {
+            std::cout << "ADIOS\n";
             break;
+        }
         else
             continue;
     }
