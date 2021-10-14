@@ -1,27 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 15:01:05 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/11 11:55:28 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/14 16:30:06 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/14 16:46:00 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-#define ISQUAD_HPP
+#include "Ice.hpp"
 
-#include "ISpaceMarine.hpp"
-
-class ISquad
+Ice::Ice(void)
 {
-    public:
-    virtual ~ISquad() {}
-    virtual int getCount() const = 0;
-    virtual ISpaceMarine* getUnit(int) const = 0;
-    virtual int push(ISpaceMarine*) = 0;
-};
+}
 
-#endif
+Ice::Ice(Ice const & src)
+{
+    if (this != &src)
+        *this = src;
+}
+
+Ice::Ice(std::string & type)
+{
+    _type = type;
+}
+
+Ice::~Ice(void)
+{
+}
+
+AMateria* Ice::clone(void) const
+{
+    return (new Ice());
+}
+
+void    Ice::use(ICharacter& target)
+{
+}
+
+Ice & Ice::operator=(Ice const & rhs)
+{
+    _type = rhs.getType();
+    _xp = rhs.getXP();
+}

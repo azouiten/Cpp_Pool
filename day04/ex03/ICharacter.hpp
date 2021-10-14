@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 15:01:05 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/11 11:55:28 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/14 17:55:03 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/14 18:00:45 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-#define ISQUAD_HPP
+#ifndef ICHARACTER_HPP
+#define ICHARACTER_HPP
 
-#include "ISpaceMarine.hpp"
+#include "AMateria.hpp"
+typedef AMateria;
 
-class ISquad
+class ICharacter
 {
-    public:
-    virtual ~ISquad() {}
-    virtual int getCount() const = 0;
-    virtual ISpaceMarine* getUnit(int) const = 0;
-    virtual int push(ISpaceMarine*) = 0;
+public:
+virtual ~ICharacter() {}
+
+virtual std::string const & getName() const = 0;
+virtual void equip(AMateria* m) = 0;
+virtual void unequip(int idx) = 0;
+virtual void use(int idx, ICharacter& target) = 0;
 };
 
 #endif

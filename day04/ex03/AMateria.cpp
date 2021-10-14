@@ -1,27 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   AMateria.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 15:01:05 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/11 11:55:28 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/14 16:10:59 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/14 16:28:07 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-#define ISQUAD_HPP
+#include "AMateria.hpp"
 
-#include "ISpaceMarine.hpp"
-
-class ISquad
+AMateria::AMateria(void)
 {
-    public:
-    virtual ~ISquad() {}
-    virtual int getCount() const = 0;
-    virtual ISpaceMarine* getUnit(int) const = 0;
-    virtual int push(ISpaceMarine*) = 0;
-};
+    _xp =0;
+}
 
-#endif
+AMateria::AMateria(std::string const & type)
+{
+    _xp =0;
+    _type = type;
+}
+
+AMateria::~AMateria(void){}
+
+std::string const & AMateria::getType(void) const
+{
+    return (_type);
+}
+
+unsigned int AMateria::getXP(void) const
+{
+    return (_xp);
+}
+
+void AMateria::use(ICharacter& target)
+{
+    _xp += 10;
+}

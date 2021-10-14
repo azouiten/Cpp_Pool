@@ -1,27 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/09 15:01:05 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/11 11:55:28 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/14 16:30:08 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/14 17:50:39 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-#define ISQUAD_HPP
+#ifndef ICE_HPP
+#define ICE_HPP
 
-#include "ISpaceMarine.hpp"
+#include "AMateria.hpp"
 
-class ISquad
+class   Ice : public AMateria
 {
-    public:
-    virtual ~ISquad() {}
-    virtual int getCount() const = 0;
-    virtual ISpaceMarine* getUnit(int) const = 0;
-    virtual int push(ISpaceMarine*) = 0;
+public:
+    Ice(void);
+    Ice(Ice const & src);
+    Ice(std::string & type);
+    virtual ~Ice(void);
+
+    virtual AMateria* clone() const;
+    virtual void use(ICharacter& target);
+    Ice & operator=(Ice const & rhs);
 };
 
 #endif
