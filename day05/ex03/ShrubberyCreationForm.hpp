@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 15:28:58 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/15 15:33:02 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/18 16:29:10 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/18 17:59:10 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
 
-#include "IMateriaSource.hpp"
+#include "Form.hpp"
+#include <fstream>
 
-class MateriaSource : public IMateriaSource
+class ShrubberyCreationForm : public Form
 {
+private:
+    std::string _target;
 public:
-    MateriaSource(void);
-    MateriaSource(MateriaSource const & src);
-    virtual ~MateriaSource(void);
-    virtual void learnMateria(AMateria*);
-    virtual AMateria* createMateria(std::string const & type);
+    ShrubberyCreationForm(void);
+    ShrubberyCreationForm(std::string target);
+    ShrubberyCreationForm(ShrubberyCreationForm const & src);
+    ~ShrubberyCreationForm(void);
+    
+    virtual void execute(Bureaucrat const & executor) const;
 };
 
 #endif

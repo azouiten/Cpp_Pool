@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:30:06 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/14 16:46:00 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:21:26 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ Ice::Ice(std::string & type)
 
 Ice::~Ice(void)
 {
+    
 }
 
 AMateria* Ice::clone(void) const
@@ -38,6 +39,7 @@ AMateria* Ice::clone(void) const
 
 void    Ice::use(ICharacter& target)
 {
+    std::cout << "* shoots an ice bolt at " << target.getName() << " *\n";
 }
 
 Ice & Ice::operator=(Ice const & rhs)

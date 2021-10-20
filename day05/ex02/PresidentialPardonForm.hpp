@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/10/15 15:28:58 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/15 15:33:02 by azouiten         ###   ########.fr       */
+/*   Created: 2021/10/18 16:57:05 by azouiten          #+#    #+#             */
+/*   Updated: 2021/10/18 17:04:35 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-#define MATERIASOURCE_HPP
+#ifndef PRESIDENTIALPARDONFORM_HPP
+#define PRESIDENTIALPARDONFORM_HPP
 
-#include "IMateriaSource.hpp"
+#include "Form.hpp"
 
-class MateriaSource : public IMateriaSource
+class PresidentialPardonForm : public Form
 {
+private:
+    std::string _target;
 public:
-    MateriaSource(void);
-    MateriaSource(MateriaSource const & src);
-    virtual ~MateriaSource(void);
-    virtual void learnMateria(AMateria*);
-    virtual AMateria* createMateria(std::string const & type);
+    PresidentialPardonForm(void);
+    PresidentialPardonForm(std::string target);
+    PresidentialPardonForm(PresidentialPardonForm const & src);
+    ~PresidentialPardonForm(void);
+
+    virtual void execute(Bureaucrat const & executor) const;
 };
 
 #endif

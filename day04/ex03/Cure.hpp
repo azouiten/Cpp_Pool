@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:35:19 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/14 17:54:08 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:18:55 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #define CURE_HPP
 
 #include "AMateria.hpp"
+#include "Character.hpp"
 
 class   Cure : public AMateria
 {

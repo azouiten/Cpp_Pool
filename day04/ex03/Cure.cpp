@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/14 16:36:08 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/14 16:46:44 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/15 15:20:13 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ AMateria* Cure::clone(void) const
 
 void    Cure::use(ICharacter& target)
 {
+    std::cout << "* heals " << target.getName() << "’s wounds *\n";
 }
 
 Cure & Cure::operator=(Cure const & rhs)
