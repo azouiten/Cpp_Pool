@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/16 15:11:56 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/18 14:59:46 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/23 11:03:16 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,28 +66,17 @@ int Bureaucrat::getGrade(void) const
 
 void    Bureaucrat::incrementGrade(void)
 {
-    try 
-    {
-        if (_grade - 1 < 1)
-            throw GradeTooHighException();
-    }
-    catch (std::exception & e)
-    {
-        e;
-    }
+    if (_grade - 1 < 1)
+        throw GradeTooHighException();
+    _grade += 1;
 }
 
 void    Bureaucrat::decrementGrade(void)
 {
-    try 
-    {
-        if (_grade + 1 > 150)
-            throw GradeTooLowException();
-    }
-    catch (std::exception & e)
-    {
-        e;
-    }
+    
+    if (_grade + 1 > 150)
+        throw GradeTooLowException();
+    _grade -= 1;
 }
 
 void    Bureaucrat::signedForm(bool permission, std::string name)

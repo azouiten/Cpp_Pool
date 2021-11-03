@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/20 16:57:43 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/22 09:57:24 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/28 16:07:34 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,9 @@ void    Karen::complain(std::string level)
     int i;
 
     i = 0;
-    while (levels[i] != level)
-    {
+    while (i < 4 && levels[i] != level)
         i += 1;
-    }
-    (this->*funcs[i])();
+    if (i < 4)
+        (this->*funcs[i])();
 
 }

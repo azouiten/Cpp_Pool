@@ -6,31 +6,35 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:15:10 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/20 17:16:46 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/11/01 18:40:01 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "include.hpp"
 
-static void error(void)
+static void error(std::string msg)
 {
-    std::cout << "Error\n";
+    std::cout << msg << std::endl;
     std::exit(1);
 }
 
-static float parseValue(std::string value)
+static double parseValue(std::string value)
 {
     int index = 0;
-    int isChar = 0;
+    // int isChar = 0;
 
     if (value.length() == 1)
-    while (value[index])
+        return(std::stod(value));
+    std::cout << value << std::endl;
+    while (index < (int)value.length())
     {
-        if ((value[index] > 9 || value[index] < 0) && index != 0)
-            error();
+        std::cout << value[index] << std::endl;
+        if ((value[index] > '9' || value[index] < '0') && value[index] != 'f' && value[index] != '.')
+            error("wrong character");
         index += 1;
     }
-    return ();
+    std::cout << value << std::endl;
+    return (std::stod(value));
 }
 
 static void printNan(std::string value)
@@ -45,18 +49,42 @@ static void printNan(std::string value)
     else
     {
         std::cout << "float :   " << value << std::endl;
-        std::cout << "double:   " << value.substr(0, 3) << std::endl;
+        std::cout << "double:   " << value.substr(0, value.length() - 1) << std::endl;
     }
     std::exit(0);
 }
 
+static void printValue(double val)
+{
+    if ((val >= 0 && val <= 31) || val > 127)
+        std::cout << "char  :   Non displayable\n";
+    else
+        std::cout << "char  :   " << static_cast<char>(val) << std::endl;
+    std::cout << "int   :   " << static_cast<int>(val) << std::endl;
+    std::cout << "float :   " << std::fixed << std::setprecision(1) << static_cast<float>(val) << "f" << std::endl;
+    std::cout << "double:   " << val << std::endl;
+}
+
 int main(int argc, char **argv)
 {
+
+    std::cout << std::stod(argv[1]) << std::endl;
     if (argc != 2)
-        error();
+        error("args");
     if (std::string(argv[1]) == "-inf" || std::string(argv[1]) == "+inf" || std::string(argv[1]) == "nan" ||
     std::string(argv[1]) == "-inff" || std::string(argv[1]) == "+inff" || std::string(argv[1]) == "nanf")
         printNan(argv[1]);
-    float val = parseValue(argv[1]);
+    double val;
+    try 
+    {
+        val = parseValue(argv[1]);
+    }
+    catch (std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+        error("double conversion");
+    }
+    std::cout << val << std::endl;
+    printValue(val);
     return (0);
 }

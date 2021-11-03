@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 15:11:20 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:50:50 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/11/01 17:42:48 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,16 @@ ScavTrap::ScavTrap(std::string name)
     _name = name;
 }
 
-ScavTrap::~ScavTrap(void)
+ScavTrap::ScavTrap(ScavTrap const &src)
 {
-    std::cout << "A ScavTrap has died.\n";
+    if (this != &src)
+        *this = src;
+}
+
+void    ScavTrap::attack(std::string const & target)
+{
+    _energyPoints -= 1;
+    std::cout << "ScavTrap " << _name << " has attacked " << target << " for " << _attackDamage << " Damage points!\n";
 }
 
 ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
@@ -49,4 +56,9 @@ ScavTrap & ScavTrap::operator=(ScavTrap const & rhs)
 void    ScavTrap::guardGate(void)
 {
     std::cout << "ScavTrap " << _name << " is now a gate keeper!\n";
+}
+
+ScavTrap::~ScavTrap(void)
+{
+    std::cout << "A ScavTrap has died.\n";
 }

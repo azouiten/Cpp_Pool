@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 14:41:45 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:44:53 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/11/01 17:08:22 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,10 @@ ClapTrap::ClapTrap(std::string name) : _hitPoints(10), _energyPoints(10), _attac
     std::cout << "A ClapTrap has spawned.\n";
 }
 
-ClapTrap::~ClapTrap(void)
+ClapTrap::ClapTrap(ClapTrap const &src)
 {
-    std::cout << "A ClapTrap has died.\n";
+    if (this != &src)
+        *this = src;
 }
 
 void    ClapTrap::attack(std::string const & target)
@@ -68,7 +69,7 @@ ClapTrap & ClapTrap::operator=(ClapTrap const & rhs)
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
-    if (amount >= _hitPoints)
+    if ((int)amount >= _hitPoints)
         _hitPoints = 0;
     else
         _hitPoints -= amount;
@@ -82,4 +83,9 @@ void    ClapTrap::beRepaired(unsigned int amount)
     else
         _hitPoints += amount;
     std::cout << "ClapTrap " << _name << " has healed for " << amount << " of hit points (current health " << _hitPoints << ")\n";
+}
+
+ClapTrap::~ClapTrap(void)
+{
+    std::cout << "A ClapTrap has died.\n";
 }

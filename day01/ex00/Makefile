@@ -6,15 +6,16 @@
 #    By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/08 10:11:20 by azouiten          #+#    #+#              #
-#    Updated: 2021/10/09 09:03:33 by azouiten         ###   ########.fr        #
+#    Updated: 2021/10/28 17:05:42 by azouiten         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME=PhoneBook
-SRCS= contact.class.cpp main.cpp phoneBook.class.cpp
+NAME= Zombie
+SRCS= Zombie.cpp main.cpp newZombie.cpp randomChump.cpp
 OBJS= $(SRCS:.cpp=.o)
 CXX= clang++
-CXXFLAGS= -Wall -Werror -Wextra
+CXXFLAGS= -Wall -Werror -Wextra -std=c++98
+HEADER= Zombie.hpp
 
 .phony: all clean fclean re
 

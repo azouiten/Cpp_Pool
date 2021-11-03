@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 11:32:56 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/21 12:14:57 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/28 16:08:48 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main(int argc, char** argv)
     std::string level = std::string(argv[1]);
     int i = 0;
     
-    while (i < kren.levels->length() && kren.levels[i] != level)
+    while (i < (int)kren.levels->length() && kren.levels[i] != level)
         i += 1;
 
     switch (i)
@@ -41,6 +41,5 @@ int main(int argc, char** argv)
         default:
             std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
     }
-    std::cout << std::endl;
     return (0);
 }

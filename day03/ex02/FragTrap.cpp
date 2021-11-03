@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 11:53:00 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 12:03:11 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/11/01 17:36:09 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,16 @@ FragTrap::FragTrap(std::string name)
     _name = name;
 }
 
-FragTrap::~FragTrap(void)
+FragTrap::FragTrap(FragTrap const &src)
 {
-    std::cout << "A FragTrap has died!\n";
+    if (this != &src)
+        *this = src;
+}
+
+void    FragTrap::attack(std::string const & target)
+{
+    _energyPoints -= 1;
+    std::cout << "FragTrap " << _name << " has attacked " << target << " for " << _attackDamage << " Damage points!\n";
 }
 
 FragTrap & FragTrap::operator=(FragTrap const & rhs)
@@ -49,4 +56,9 @@ FragTrap & FragTrap::operator=(FragTrap const & rhs)
 void    FragTrap::highFivesGuys(void)
 {
     std::cout << "This is a positive high fives request.\n";
+}
+
+FragTrap::~FragTrap(void)
+{
+    std::cout << "A FragTrap has died!\n";
 }

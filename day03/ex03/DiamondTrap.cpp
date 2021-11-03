@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/04 12:06:05 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/05 12:59:52 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/11/01 17:45:59 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,16 @@ DiamondTrap::DiamondTrap(void)
     std::cout << "a DiamondTrap has spawned.\n";
 }
 
-DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name") , ScavTrap(4), FragTrap(3)
+DiamondTrap::DiamondTrap(std::string name) : FragTrap(3), ScavTrap(4)
 {
+    _name = name + "_clap_name";
     pName = name;
     std::cout << "a DiamondTrap has spawned.\n";
+}
+
+void DiamondTrap::attack(std::string const &target)
+{
+    ScavTrap::attack(target);
 }
 
 DiamondTrap & DiamondTrap::operator=(DiamondTrap const & rhs)

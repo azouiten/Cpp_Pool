@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 15:11:20 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/05 11:33:57 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/11/01 17:43:02 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,18 @@ ScavTrap::ScavTrap(std::string name)
     _energyPoints = 50;
     _attackDamage = 20;
     _name = name;
+}
+
+ScavTrap::ScavTrap(ScavTrap const &src)
+{
+    if (this != &src)
+        *this = src;
+}
+
+void    ScavTrap::attack(std::string const & target)
+{
+    _energyPoints -= 1;
+    std::cout << "ScavTrap " << _name << " has attacked " << target << " for " << _attackDamage << " Damage points!\n";
 }
 
 ScavTrap::ScavTrap(int param)

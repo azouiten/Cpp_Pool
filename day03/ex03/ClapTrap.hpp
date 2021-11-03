@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/29 14:41:47 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/04 11:44:18 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/11/01 17:38:24 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ protected:
 public:
     ClapTrap(void);
     ClapTrap(std::string name);
-    ~ClapTrap(void);
+    ClapTrap(ClapTrap const &);
 
     std::string getName(void) const;
     int getHitPoints(void) const;
@@ -35,6 +35,7 @@ public:
     void attack(std::string const & target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+    ~ClapTrap(void);
 };
 
 #endif

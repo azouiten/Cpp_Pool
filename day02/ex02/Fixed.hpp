@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:26:15 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/23 15:10:21 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/30 15:04:27 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,15 +36,15 @@ public:
     bool    operator<=(Fixed const & rhs);
     bool    operator==(Fixed const & rhs);
     bool    operator!=(Fixed const & rhs);
-    Fixed & operator*(Fixed const & rhs);
-    Fixed & operator/(Fixed const & rhs);
-    Fixed & operator+(Fixed const & rhs);
-    Fixed & operator-(Fixed const & rhs);
+    Fixed   operator*(Fixed const & rhs);
+    Fixed   operator/(Fixed const & rhs);
+    Fixed   operator+(Fixed const & rhs);
+    Fixed   operator-(Fixed const & rhs);
     int     getRawBits(void) const;
     void    setRawBits(int const raw);
     float   toFloat(void) const;
     int     toInt(void) const; 
 };
-    std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
+std::ostream & operator<<(std::ostream & o, Fixed const & rhs);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/21 15:26:13 by azouiten          #+#    #+#             */
-/*   Updated: 2021/09/23 16:20:07 by azouiten         ###   ########.fr       */
+/*   Updated: 2021/10/30 15:05:40 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -110,45 +110,37 @@ bool    Fixed::operator>=(Fixed const & rhs)
     return (false);
 }
 
-Fixed & Fixed::operator*(Fixed const & rhs)
+Fixed   Fixed::operator*(Fixed const & rhs)
 {
-    this->value = (this->value * rhs.value) >> fractionalBits;
-    return (*this);
+    return (Fixed(this->toFloat()*rhs.toFloat()));
 }
 
-Fixed & Fixed::operator/(Fixed const & rhs)
+Fixed   Fixed::operator/(Fixed const & rhs)
 {
     if (rhs.value != 0)
-    {
-        this->value = this->value << fractionalBits;
-        this->value = (this->value / rhs.value);
-    }
+        return (Fixed(this->toFloat()/rhs.toFloat()));
     else
         std::cout << "Can't devide by zero!\n";
     return (*this);
 }
 
-Fixed & Fixed::operator+(Fixed const & rhs)
+Fixed   Fixed::operator+(Fixed const & rhs)
 {
-    this->value += rhs.getRawBits();
-    return (*this);
+    return (Fixed(this->toFloat()+rhs.toFloat()));
 }
 
-Fixed & Fixed::operator-(Fixed const & rhs)
+Fixed   Fixed::operator-(Fixed const & rhs)
 {
-    this->value -= rhs.getRawBits();
-    return (*this);
+    return (Fixed(this->toFloat()-rhs.toFloat()));
 }
 
 int Fixed::getRawBits(void) const
 {
-    std::cout << "getRawBits member function called.\n";
     return (this->value);
 }
 
 void    Fixed::setRawBits(int const raw)
 {
-    std::cout << "setRawBits member function called.\n";
     this->value = raw;
 }
 
