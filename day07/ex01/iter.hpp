@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 18:26:51 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/23 18:32:35 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/11 18:25:45 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 template <typename T, typename F>
 void    iter(T table[], size_t size, F f)
 {
-    int index = 0;
+    size_t index = 0;
     while (index < size)
     {
         f(table[index]);

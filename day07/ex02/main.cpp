@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/25 07:18:30 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/25 07:32:56 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/13 12:15:44 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,21 @@
 
 int main(void)
 {
-    int *a = new int();
-    std::cout << *a << std::endl;
-
+    Array<int>   a(10);
+    Array<int>   b(a);
+    a[1] = 10;
+    std::cout << a[1] << std::endl;
+    std::cout << b[1] << std::endl;
+    b = a;
+    std::cout << a[2] << std::endl;
+    std::cout << b[2] << std::endl;
+    try 
+    {
+        a[100] = 10;
+    }
+    catch (std::exception& e)
+    {
+        std::cout << e.what() << std::endl;
+    }
     return (0);
 }

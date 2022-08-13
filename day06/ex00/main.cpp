@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/20 17:15:10 by azouiten          #+#    #+#             */
-/*   Updated: 2021/11/01 18:40:01 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/11 17:30:29 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,26 +14,22 @@
 
 static void error(std::string msg)
 {
-    std::cout << msg << std::endl;
+    std::cout << "Error : " << msg << std::endl;
     std::exit(1);
 }
 
 static double parseValue(std::string value)
 {
     int index = 0;
-    // int isChar = 0;
 
     if (value.length() == 1)
         return(std::stod(value));
-    std::cout << value << std::endl;
     while (index < (int)value.length())
     {
-        std::cout << value[index] << std::endl;
         if ((value[index] > '9' || value[index] < '0') && value[index] != 'f' && value[index] != '.')
             error("wrong character");
         index += 1;
     }
-    std::cout << value << std::endl;
     return (std::stod(value));
 }
 
@@ -68,7 +64,6 @@ static void printValue(double val)
 int main(int argc, char **argv)
 {
 
-    std::cout << std::stod(argv[1]) << std::endl;
     if (argc != 2)
         error("args");
     if (std::string(argv[1]) == "-inf" || std::string(argv[1]) == "+inf" || std::string(argv[1]) == "nan" ||
@@ -84,7 +79,6 @@ int main(int argc, char **argv)
         std::cout << e.what() << std::endl;
         error("double conversion");
     }
-    std::cout << val << std::endl;
     printValue(val);
     return (0);
 }

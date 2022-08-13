@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/23 18:26:52 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/23 18:40:25 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/11 18:24:33 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int main(void)
         index ++;
     }
     std::cout << std::endl;
-    ::iter(Tab, 10, &multiply);
+    iter(Tab, 10, &multiply);
     index = 0;
     while (index < 10)
     {
@@ -46,7 +46,7 @@ int main(void)
         index ++;
     }
     std::cout << std::endl;
-    ::iter(Tab, 10, &increment);
+    iter(Tab, 10, &increment);
     index = 0;
     while (index < 10)
     {
@@ -54,7 +54,7 @@ int main(void)
         index ++;
     }
     std::cout << std::endl;
-    ::iter(Tab, 10, &decrement);
+    iter(Tab, 10, &decrement);
     index = 0;
     while (index < 10)
     {

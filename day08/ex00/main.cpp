@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 14:14:45 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/28 11:47:24 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/13 13:51:17 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,14 @@
 int main(void)
 {
     std::vector<int> v(10, 2);
-    std::cout << easyfind(v, 1) << std::endl;
+    std::list<int> v(10, 2);
+    try 
+    {
+        std::cout << easyfind(v, 2) << std::endl;
+    }
+    catch (std::exception& e)
+    {
+        std::cout << e.what();
+    }
     return (0);
 }

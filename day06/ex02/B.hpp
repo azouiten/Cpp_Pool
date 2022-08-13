@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 12:35:35 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/22 12:39:12 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/11 18:08:48 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 #include "Base.hpp"
 
 class B : public Base
-{
-public:
-    virtual ~B(void);
-};
+{};
 
 #endif

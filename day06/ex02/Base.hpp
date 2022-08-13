@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 12:26:02 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/22 12:52:50 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/11 18:10:56 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,5 +20,4 @@ class Base
 public:
     virtual ~Base(void);
 };
-
 #endif

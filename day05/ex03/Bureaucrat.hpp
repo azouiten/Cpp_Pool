@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:42:35 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/18 19:19:48 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/04 13:17:44 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 #define BUREAUCRAT_HPP
 #include "Form.hpp"
 #include <iostream>
+
+class Form;
 
 class Bureaucrat
 {
@@ -24,12 +26,12 @@ public:
     class GradeTooHighException : public std::exception
     {
         public:
-        virtual const char* what(void) const throw();
+            virtual const char* what(void) const throw();
     };
     class GradeTooLowException : public std::exception
     {
         public:
-        virtual const char * what(void) const throw();
+            virtual const char* what(void) const throw();
     };
     Bureaucrat(void);
     Bureaucrat(std::string name, int grade);

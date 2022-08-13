@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 11:48:23 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/29 11:03:29 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/13 17:27:40 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@
 class   Span
 {
 private:
-    int                 _maxSize;
-    int                 _size;
+    unsigned int        _maxSize;
+    unsigned int        _size;
     std::vector<int>    _vContainer;
 public:
     class   capacityExceededExeption : public std::exception
@@ -39,7 +39,7 @@ public:
         }
     };
     Span(void);
-    Span(int size);
+    Span(unsigned int size);
     Span(Span const & src);
     ~Span(void);
 
@@ -47,6 +47,7 @@ public:
     int getCurrSize(void) const;
     std::vector<int> getContainer(void) const;
     void addNumber(int nbr);
+
     template <typename T>
     void addNumber(T begin, T last)
     {

@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/15 16:42:35 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/18 14:53:03 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/04 13:19:06 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,19 +24,19 @@ public:
     class GradeTooHighException : public std::exception
     {
         public:
-        virtual const char* what(void) const throw();
+            virtual const char* what(void) const throw();
     };
     class GradeTooLowException : public std::exception
     {
         public:
-        virtual const char * what(void) const throw();
+            virtual const char* what(void) const throw();
     };
     Bureaucrat(void);
     Bureaucrat(std::string name, int grade);
     Bureaucrat(Bureaucrat const & src);
     ~Bureaucrat(void);
 
-    void    signedForm(bool permission, std::string name);
+    void    signForm(bool permission, std::string name);
     std::string const &    getName(void) const;
     int    getGrade(void) const;
     void    incrementGrade(void);

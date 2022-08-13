@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 11:56:51 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/22 12:13:37 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/11 17:36:54 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,6 @@ Data::~Data(void){}
 
 Data& Data::operator=(Data const & rhs)
 {
+    (void)rhs;
     return (*this);
 }

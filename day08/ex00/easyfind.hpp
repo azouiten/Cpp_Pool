@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/26 13:07:01 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/27 14:13:33 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/13 13:50:59 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,12 @@
 template <typename T>
 int easyfind(T container, int elemnt)
 {
-    std::vector<int>::iterator iter = container.begin();
-    std::vector<int>::iterator iterEnd = container.end();
+    typename T::iterator iter = container.begin();
+    typename T::iterator iterEnd = container.end();
 
-    while (iter != iterEnd)
-    {
-        if (*iter == elemnt)
-            return (1);
-        iter += 1;
-    }
-    return (-1);
+    if (std::find(iter, iterEnd, elemnt) == iterEnd)
+        throw std::invalid_argument("Error : no such element");
+    return 1;
 }
 
 #endif

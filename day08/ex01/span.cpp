@@ -6,23 +6,18 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/28 11:51:55 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/29 11:02:19 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/13 18:27:30 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "span.hpp"
 
-Span::Span(void)
+Span::Span(void) : _maxSize(0), _size(0)
 {
-    _maxSize = 0;
-    _size = 0;
 }
 
-Span::Span(int size)
-{
-    _maxSize = size;
-    _size = 0;
-}
+Span::Span(unsigned int size) : _maxSize(size), _size(0)
+{}
 
 Span::Span(Span const & src)
 {
@@ -49,7 +44,7 @@ std::vector<int> Span::getContainer(void) const
 
 void    Span::addNumber(int nbr)
 {
-    if (_size >= _maxSize)
+    if (_size == _maxSize)
         throw capacityExceededExeption();
     _size += 1;
     _vContainer.insert(_vContainer.begin(), nbr);
@@ -57,12 +52,10 @@ void    Span::addNumber(int nbr)
 
 int     Span::longestSpan(void)
 {
-    if (_size == 0)
+    if (_size <= 1)
         throw spanNotFoundExeption();
     int max = *max_element(_vContainer.begin(), _vContainer.end());
     int min = *min_element(_vContainer.begin(), _vContainer.end());
-    if (_size == 1 || max - min == 0)
-        throw spanNotFoundExeption();
     return (max - min);
 }
 
@@ -87,7 +80,7 @@ int     Span::shortestSpan(void)
 Span & Span::operator=(Span const & rhs)
 {
     _maxSize = rhs.getMaxSize();
-    _size = getCurrSize();
-    _vContainer = getContainer();
+    _size = rhs.getCurrSize();
+    _vContainer = rhs.getContainer();
     return (*this);
 }

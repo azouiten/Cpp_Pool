@@ -65,7 +65,8 @@
         "__functional_03": "cpp",
         "memory_resource": "cpp",
         "deque": "cpp",
-        "stack": "cpp"
+        "stack": "cpp",
+        "bit": "cpp"
     },
     "C_Cpp.dimInactiveRegions": false
 }

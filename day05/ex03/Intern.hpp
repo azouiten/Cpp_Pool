@@ -6,7 +6,7 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/19 14:02:50 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/19 15:52:08 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/02 18:54:04 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,14 +17,20 @@
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
+typedef Form* (*functions) (std::string a);
+
 class Intern
 {
+private:
+    static Form*   ShrubberyForm(std::string target);
+    static Form*   RobotomyForm(std::string target);
+    static Form*   PresidentForm(std::string target);
 public:
     Intern(void);
     Intern(Intern const & src);
     ~Intern(void);
     
-    class UnkownFormExeption :  std::exception
+    class UnkownFormExeption : public std::exception
     {
     public:
         virtual const char * what() const throw();

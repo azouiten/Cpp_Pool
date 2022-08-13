@@ -6,15 +6,15 @@
 /*   By: azouiten <azouiten@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/22 12:50:32 by azouiten          #+#    #+#             */
-/*   Updated: 2021/10/26 16:54:49 by azouiten         ###   ########.fr       */
+/*   Updated: 2022/08/11 18:11:01 by azouiten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "A.hpp"
 #include "B.hpp"
 #include "C.hpp"
+#include "Base.hpp"
 #include <ctime>
-
 
 Base * generate(void)
 {
@@ -43,6 +43,7 @@ void    identify(Base& p)
     try
     {
         A& ref = dynamic_cast<A&>(p);
+        (void)ref;
         std::cout << "A\n";
         return;
     }
@@ -50,6 +51,7 @@ void    identify(Base& p)
     try
     {
         B& ref = dynamic_cast<B&>(p);
+        (void)ref;
         std::cout << "B\n";
         return;
     }
@@ -57,6 +59,7 @@ void    identify(Base& p)
     try
     {
         C& ref = dynamic_cast<C&>(p);
+        (void)ref;
         std::cout << "C\n";
         return;
     }
